@@ -1,10 +1,15 @@
+# Tina Wong
+# SoftDev1 pd7
+# K13 -- Echo Echo Echo
+# 2018-09-27
+
 from flask import Flask, render_template, request
 app = Flask(__name__)
 
 @app.route("/")
 def home():
-    print(app)
-    return "Hello!"
+    # print(app)
+    return "Hello! Navigate to <a href=/form>this form</a>!"
 
 @app.route("/form")
 def forms():
