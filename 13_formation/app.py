@@ -4,18 +4,21 @@
 # 2018-09-27
 
 from flask import Flask, render_template, request
-app = Flask(__name__)
+app = Flask(__name__) #create instance of class Flask
 
-@app.route("/")
+# home page that links to the form
+@app.route("/") #assign fxn to route
 def home():
     # print(app)
     return "Hello! Navigate to <a href=/form>this form</a>!"
 
-@app.route("/form")
+# a route to the form
+@app.route("/form") #assign fxn to route
 def forms():
     return render_template("form.html")
 
-@app.route("/auth")
+# a route that receives the form and returns a template with user's information
+@app.route("/auth") #assign fxn to route
 def authenticate():
     print(app)
     print(request)
