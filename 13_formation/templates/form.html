@@ -5,9 +5,15 @@
   </head>
   <body>
     <h1> </h1>
-    <form action="/auth">
-    Name: <input type="text" name="username">
-    <input type="submit" name="sub1">
+
+    <form action="/auth" method="GET">
+      Name: <input type="text" name="usernameViaGet">
+      <input type="submit" name="subViaGet">
+    </form>
+    
+    <form action="/auth" method="POST">
+      Name: <input type="text" name="usernameViaPost">
+      <input type="submit" name="subViaPost">
     </form>
   </body>
 </html>

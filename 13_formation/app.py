@@ -18,16 +18,20 @@ def forms():
     return render_template("form.html")
 
 # a route that receives the form and returns a template with user's information
-@app.route("/auth") #assign fxn to route
+@app.route("/auth", methods=["GET", "POST"]) #assign fxn to route
 def authenticate():
-    print(app)
-    print(request)
-    print(request.args)
-    print(request.args['username'])
-    print(request.headers)
+    if request.method == "GET":
+        user = request.args['usernameViaGet']
+        print(app)
+        print(request)
+        print(request.args)
+        print(request.args['usernameViaGet'])
+        print(request.headers)
+    else:
+        user = request.form['usernameViaPost']
     return render_template("authenticate.html",
-                               user=request.args['username'],
-                               method=request.method)
+                                   user=user,
+                                   method=request.method)
 
 if __name__ == "__main__":
     app.debug = True
