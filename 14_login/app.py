@@ -1,7 +1,7 @@
 # Tina Wong
 # SoftDev1 pd7
-# K13 -- Echo Echo Echo
-# 2018-09-27
+# K14 -- Do I Know You?
+# 2018-10-02
 
 from flask import Flask, render_template, request, session, redirect, url_for
 import os
