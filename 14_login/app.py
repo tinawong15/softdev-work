@@ -1,4 +1,4 @@
-# Tina Wong
+# Ryan Aday, Tina Wong - team GG
 # SoftDev1 pd7
 # K14 -- Do I Know You?
 # 2018-10-02
@@ -11,7 +11,7 @@ app.secret_key = os.urandom(32)
 
 users = {'test' : '123'}
 
-# home page that links to the form
+# home page that either renders the welcome page or the login page
 @app.route("/") #assign fxn to route
 def home():
     # print("testing")
@@ -21,7 +21,7 @@ def home():
         user = 'test'
         return render_template("welcome.html",user=user)
 
-# a route that receives the form and returns a template with user's information
+# a route that receives the login form and checks if the login information is correct
 @app.route("/auth", methods=["POST"]) #assign fxn to route
 def authenticate():
     if request.form['username'] not in users.keys():
@@ -32,6 +32,7 @@ def authenticate():
         session['test'] = '123'
         return redirect(url_for('home'))
 
+# a route that removes the current user from the session and redirects the user back to the login page from home
 @app.route('/logout')
 def logout():
     session.pop('test')
