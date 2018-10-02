@@ -25,9 +25,9 @@ def home():
 @app.route("/auth", methods=["POST"]) #assign fxn to route
 def authenticate():
     if request.form['username'] not in users.keys():
-        return render_template("login.html", error = "Username invalid")
+        return render_template("login.html", error = "Username invalid, is not "+request.form['username'])
     elif users[request.form['username']] != request.form['password']:
-        return render_template('login.html', error = "Password invalid")
+        return render_template('login.html', error = "Password invalid, is not "+request.form['password'])
     else:
         session['test'] = '123'
         return redirect(url_for('home'))
@@ -35,7 +35,7 @@ def authenticate():
 # a route that removes the current user from the session and redirects the user back to the login page from home
 @app.route('/logout')
 def logout():
-    session.pop('test')
+    session.pop('test') # ends session
     return redirect(url_for('home'))
 
 if __name__ == "__main__":
