@@ -1,4 +1,4 @@
-# Ryan Aday, Tina Wong - team GG
+# Ryan Aday, Tina Wong - team TL;DR
 # SoftDev1 pd7
 # K15 -- Oh yes, perhaps I do...
 # 2018-10-02
@@ -7,9 +7,9 @@ from flask import Flask, render_template, request, session, redirect, url_for, f
 import os
 
 app = Flask(__name__) #create instance of class Flask
-app.secret_key = os.urandom(32)
+app.secret_key = os.urandom(32) #creates random key of 32 bytes
 
-users = {'test' : '123'}
+users = {'test' : '123'} # key and value in dict
 
 # home page that either renders the welcome page or the login page
 @app.route("/") #assign fxn to route
