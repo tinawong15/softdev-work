@@ -8,8 +8,8 @@ import sqlite3   #enable control of an sqlite database
 import csv       #facilitates CSV I/O
 
 # Creates a cursor and the database
-db = sqlite3.connect("discobandit.db")
-c = db.cursor()
+db = sqlite3.connect("discobandit.db") #open if file exists, otherwise create
+c = db.cursor() #facilitate db ops
 
 def lookup_grades(name):
     c.execute("SELECT code, mark FROM courses, peeps WHERE peeps.id=courses.id AND name = \"{}\"".format(name))
@@ -20,7 +20,7 @@ def lookup_grades(name):
     return string
 
 def get_avg():
-    # c.execute("ALTER TABLE peeps ADD average INTEGER")
+    c.execute("ALTER TABLE peeps ADD average INTEGER")
     for i in (range(10)):
         d = i + 1
         temp = 0
@@ -50,10 +50,17 @@ def display_info():
     string = string.rstrip()
     return string
 
+def table():
+    c.execute("CREATE TABLE peeps_avg (id INTEGER, average INTEGER)")
+    c.execute("SELECT id, average FROM peeps")
+    for data in c.fetchall():
+        c.execute("INSERT INTO peeps_avg VALUES ( \"{}\" , \"{}\" )".format(data[0] , data[1]) ) #run SQL statement
+
 get_avg()
 print (compute_avg("kruder"))
 print (lookup_grades("kruder"))
 print (display_info())
+table()
 
 db.commit() #save changes
 db.close()  #close database
