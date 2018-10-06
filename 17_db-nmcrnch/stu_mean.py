@@ -35,6 +35,13 @@ def get_avg():
         c.execute("UPDATE peeps SET average = {} WHERE id = {}".format(str(temp), str(d)))
         # print(temp)
 
+def compute_avg(name):
+    c.execute("SELECT average FROM peeps WHERE name = \"{}\"".format(name))
+    string = '';
+    for data in c.fetchall():
+        string += name+"'s Average: {}".format(data[0])
+    return string
+
 def display_info():
     string = ''
     c.execute("SELECT name, id, average FROM peeps")
@@ -44,6 +51,7 @@ def display_info():
     return string
 
 get_avg()
+print (compute_avg("kruder"))
 print (lookup_grades("kruder"))
 print (display_info())
 
