@@ -20,7 +20,7 @@ def lookup_grades(name):
     return string
 
 def get_avg():
-    c.execute("ALTER TABLE peeps ADD average INTEGER")
+    c.execute("ALTER TABLE peeps ADD average FLOAT")
     for i in (range(10)):
         d = i + 1
         temp = 0
@@ -30,7 +30,7 @@ def get_avg():
             # print(j)
             temp += j[0]
             cnt +=1
-        temp = temp/cnt
+        temp = float(temp)/cnt
         # temp  == Average
         c.execute("UPDATE peeps SET average = {} WHERE id = {}".format(str(temp), str(d)))
         # print(temp)
@@ -51,7 +51,7 @@ def display_info():
     return string
 
 def table():
-    c.execute("CREATE TABLE peeps_avg (id INTEGER, average INTEGER)")
+    c.execute("CREATE TABLE peeps_avg (id INTEGER, average FLOAT)")
     c.execute("SELECT id, average FROM peeps")
     for data in c.fetchall():
         c.execute("INSERT INTO peeps_avg VALUES ( \"{}\" , \"{}\" )".format(data[0] , data[1]) ) #run SQL statement
