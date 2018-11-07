@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<!-- we use the online version because it's a small project and does not require fast loading, so we can afford the tiny decrease in efficiency -->
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+		<title>Hello, world!</title>
+	</head>
+
+	<body>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<a class="navbar-brand" href="#">Home</a>
+		<ul class="nav navbar-nav mr-auto">
+			<li class="nav-item">
+				<a class="nav-link" href="#">Page 1</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">Page 2</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">Page 3</a>
+			</li>
+		</ul>
+		<form class="form-inline">
+			<input class="form-control mr-sm-2" type="search" placeholder="Search">
+			<button class="btn btn-outline-success" type="submit">Search</button>
+		</form>
+		</nav>
+
+    <main class="container">
+		<br>
+
+    <!-- credits to Raymond Wu's post in the QAF for providing this test to ensure that an HTML element was Bootstrap-ified. -->
+		<div class="alert alert-primary" role="alert">
+			A simple primary alert&mdash;check it out!
+		</div>
+
+    	<h1> Login </h1>
+	    <div class="form-group">
+		  <div class="col-md-4 mb-3">
+			  <label for="username">Username: </label>
+			  <input type="text" class="form-control" id="username" placeholder="Username">
+			  <br>
+
+			  <label for="password">Password: </label>
+			  <input type="password" class="form-control" id="password" placeholder="Password">
+			  <br>
+
+			  <button class="btn btn-primary" type="submit">Submit!</button>
+      		</div>
+		</div>
+  	</main>
+
+  </body>
+</html>
