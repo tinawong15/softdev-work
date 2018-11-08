@@ -1,11 +1,18 @@
 <!DOCTYPE html>
+<!--
+Rubin Peci, Tina Wong (Team MoneyLonger)
+SoftDev1 pd7
+K21 -- Who Does Frame Work For?
+2018-11-07
+-->
+
 <html lang="en" dir="ltr">
 	<!-- we use CDN because it's a small project and there is no need to push many files of css and js to our repositories -->
 	<head>
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-		<title>Hello, world!</title>
+		<title>Hello, Bootstrap world!</title>
 	</head>
 
 	<body>
@@ -30,6 +37,9 @@
 
     <main class="container">
 		<br>
+			<div class="alert alert-primary" role="alert">
+				Here is a simple primary alert for this page.
+			</div>
     	<h1> Login </h1>
 	    <div class="form-group">
 		  <div class="col-md-4 mb-3">
@@ -45,7 +55,11 @@
       </div>
 		  </div>
       <h1 class="display-4"> Heading Display 4</h1>
-      <p class="lead"> Here we can <mark>write</mark>. </p>
+      <p class="lead">
+				Here we can <mark>highlight</mark>.
+				<del>I want to delete this.</del>
+				We can also <strong>bold</strong>, <em>italicize</em>, and <small>make text small.</small>
+			</p>
   	</main>
 
   </body>
