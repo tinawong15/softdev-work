@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>REST Demo</title>
+  </head>
+  <body>
+    <h1> Weather Adventures in {{ name }} using RESTful APIs: </h1>
+    <p> Other names for {{ name }}:
+      {% for translation in translations %}
+      {{ translation }},
+      {% endfor %}
+    </p>
+    <p> Current timezone: {{ timezone }} </p>
+    <p>Sunrise: {{ sunrise }}</p>
+    <p>Sunset: {{ sunset }}</p>
+    <!-- <img src="{{ pic }}"> -->
+  </body>
+</html>
