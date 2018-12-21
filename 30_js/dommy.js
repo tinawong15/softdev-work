@@ -19,7 +19,7 @@ var fibonacci = function(n) {
   }
 }
 
-var countFib = 1;
+var countFib = 0;
 var addFib = function() {
   var ol = document.getElementById("fiblist");
   var newFib = document.createElement("li");
